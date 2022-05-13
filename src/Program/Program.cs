@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Library;
 
 namespace PII_Herencia
 {
@@ -7,34 +8,32 @@ namespace PII_Herencia
     {
         static void Main(string[] args)
         {
-            /*
-            En éste método deberas mostrar un ejemplo de funcionamiento de tu programa an pseudocódigo. A continuación te 
-            planteamos un ejemplo de como hacerlo. Esto no significa que te limites a hacer solamente esto, debes pensar 
-            en grande!
 
-            Usuario pasajero1 = nuevo Pasajero()
-            Usuario pasajero2 = nuevo Pasajero()
-            Usuario pasajero3 = nuevo Pasajero()
-            Usuario conductor1 = nuevo Conductor()
-            Usuario conductorPool1 = nuevo ConductorPool(maxPasajeros = 3)
-            UcuRideShare rideShare = nuevo UcuRideShare()
+            Person pasajero1 = new Passenger("Pepe", "Rodriguez", 34567890, 10);
+            Person pasajero2 = new Passenger("Javi", "nasheer", 34422220, 9);
             
-            rideShare.Add(conductor1)
-            Se publica en Twitter un nuevo conductor!
-
-            rideShare.Add(conductorPool1)
-            Se publica en Twitter un nuevo conductor!
+            Person conductor1 = new Driver("Ionas", "Josponis", 52429030, 10, "Volkswagen Gol");
+            Person conductorPool1 = new PoolDriver("primo", "del iona", 4566540, 9, "Ford Ranger", 8);
+            UcuRideShare rideShare = new UcuRideShare();
             
-            rideShare.Add(pasajero1)
-            Se publica en Twitter nuevo registro de pasajero!
+            rideShare.AddUser(conductor1);
+            //Se publica en Twitter un nuevo conductor!
+
+            rideShare.AddUser(conductorPool1);
+            //Se publica en Twitter un nuevo conductor!
             
-            rideShare.Add(pasajero2)
-            Se publica en Twitter nuevo registro de pasajero!
+            rideShare.AddUser(pasajero1);
+            //Se publica en Twitter nuevo registro de pasajero!
+            
+            rideShare.AddUser(pasajero2);
+            //Se publica en Twitter nuevo registro de pasajero!      
 
-            rideShare.Add(pasajero3)
-            Se publica en Twitter nuevo registro de pasajero!
+                
 
-            */
+            foreach (var user in rideShare.users)
+            {
+                Console.WriteLine(user.Name);
+            }  
         }
     }
 }
