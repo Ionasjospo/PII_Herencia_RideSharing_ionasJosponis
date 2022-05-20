@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Library;
-using TwitterUCU;
+
 
 namespace PII_Herencia
 {
@@ -36,11 +36,12 @@ namespace PII_Herencia
                 Console.WriteLine(user.Name);
             }
 
-            TwitterApi twitterApi = new TwitterApi();
 
 
-            var twitter = new TwitterImage();
-            Console.WriteLine(twitter.PublishToTwitter("text", @"C:\Users\Usuario\OneDrive - Universidad Católica del Uruguay\Escritorio\UCU\SegundoAño\Prog2_2022\EjerciciosIndividuales\PII_HerenciaRideSharing\PII_Herencia_RideSharing_ionasJosponis\bill2.jpg"));
+            // var twitter = new TwitterImage();
+            // Console.WriteLine(twitter.PublishToTwitter("New employer!",@"bill2.jpg"));
+            var twitter = new TwitterMessage();
+            twitter.SendMessage("Hola!", "1335377487279349760");
 
 
 
